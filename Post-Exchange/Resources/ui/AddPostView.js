@@ -2,7 +2,6 @@ function AddPostView() {
     var module = require('ui/PlatformStyles');
     var styles = new module().getStyles();
 	var mainWindow = Ti.UI.createWindow({
-	    exitOnClose : true
 	});
 	
 	var mainView = Ti.UI.createView({
@@ -14,11 +13,14 @@ function AddPostView() {
 	
 	var titleLabel = Ti.UI.createLabel({
 	    text: "Add A Post",
-	    top : 15,
-	    font : {
-	       fontSize: "20dp",      
-	    },
-	    color : "white"
+	    top : 5,
+        font : {
+           fontSize: "34dp", 
+           fontFamily:"Always In My Heart" 
+        },
+        shadowColor:"black",
+        shadowOffset:{x:1,y:1},
+        color : "white"
 	});
 	
 	var postTitleTF = Ti.UI.createTextField({

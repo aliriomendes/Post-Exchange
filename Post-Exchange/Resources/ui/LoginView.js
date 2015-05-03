@@ -2,7 +2,6 @@ function LoginView() {
     var module = require('ui/PlatformStyles');
     var styles = new module().getStyles();
 	var mainWindow = Ti.UI.createWindow({
-	    exitOnClose : true
 	});
 	
 	var mainView = Ti.UI.createView({
@@ -20,11 +19,14 @@ function LoginView() {
 	
 	var titleLabel = Ti.UI.createLabel({
 	    text: "Post Exchange",
-	    top : 15,
+	    top : 5,
 	    font : {
-	       fontSize: "20dp",      
+	       fontSize: "34dp", 
+	       fontFamily: styles.fontFamelyAlways
 	    },
-	    color : "white"
+	    shadowColor:"black",
+	    shadowOffset:{x:1,y:1},
+	    color : "white",
 	});
 	
 	var usernameTF = Ti.UI.createTextField({
@@ -51,7 +53,8 @@ function LoginView() {
         bottom : 0,
         right : 0,
         font : {
-           fontSize: "20dp",      
+           fontSize: "30dp",
+           fontFamily: styles.fontFamelyAlways       
         },
         color : "brown",
         backgroundColor : 'transparent'
@@ -62,10 +65,11 @@ function LoginView() {
         bottom : 20,
         left : 30,
         font : {
-           fontSize: "20dp",      
+           fontSize: "30dp",
+           fontFamily: styles.fontFamelyAlways       
         },
         color : "brown",
-        backgroundColor : 'transparent'
+        backgroundColor : 'transparent',
     });
     loginBtn.addEventListener("click", function(e){
         var Login = require('ui/StartUpView');

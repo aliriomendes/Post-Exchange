@@ -20,11 +20,14 @@ function CreateAccountView() {
 	
 	var titleLabel = Ti.UI.createLabel({
 	    text: "Create Account",
-	    top : 15,
-	    font : {
-	       fontSize: "20dp",      
-	    },
-	    color : "white"
+	    top : 5,
+        font : {
+           fontSize: "34dp", 
+           fontFamily:"Always In My Heart" 
+        },
+        shadowColor:"black",
+        shadowOffset:{x:1,y:1},
+        color : "white"
 	});
 	
 	var usernameTF = Ti.UI.createTextField({

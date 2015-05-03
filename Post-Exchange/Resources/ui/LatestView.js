@@ -14,10 +14,13 @@ function LatestView() {
     
     var titleLabel = Ti.UI.createLabel({
         text: "Latest Posts",
-        top : 15,
+        top : 5,
         font : {
-           fontSize: "20dp",      
+           fontSize: "34dp", 
+           fontFamily:"Always In My Heart" 
         },
+        shadowColor:"black",
+        shadowOffset:{x:1,y:1},
         color : "white"
     });
     var backBtn = Ti.UI.createImageView({
