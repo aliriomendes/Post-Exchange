@@ -1,0 +1,8 @@
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/android/support/v7/appcompat/R.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/ApplicationStylesheet.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/AssetCryptImpl.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/PostExchangeActivity.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/PostExchangeAppInfo.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/PostExchangeApplication.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/com/aliriomendes/postexchange/R.java"
+"/Users/Alirio/Documents/Post-Exchange/Post-Exchange/build/android/gen/ti/modules/titanium/ui/R.java"
