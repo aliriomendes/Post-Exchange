@@ -49,7 +49,7 @@ function CreateAccountView() {
         autocapitalization : false,
         backgroundImage : styles.textFieldtbackgroundImage,
     });
-    var loginBtn = Ti.UI.createButton({
+    var CreateBtn = Ti.UI.createButton({
         title: "Create",
         bottom : 0,
         right : 0,
@@ -71,11 +71,52 @@ function CreateAccountView() {
     });
     
     
-    loginBtn.addEventListener("click", function(e){
-        var Window = require('ui/LoginView');
-        new Window().open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});
+    CreateBtn.addEventListener("click", function(e){
+        if(usernameTF.value !== '' && passwordTF.value !== ''){ 
+           var loginCheck = 1;
+           var username = usernameTF.value ;
+           var password = passwordTF.value ;
+            
+            //check login credentials   
+               var xhr = Titanium.Network.createHTTPClient(); 
+                xhr.open("GET", "http://aliriomendes.com/workshop/api.php?mode=checkusercreate&user="+username);
+                xhr.onload = function () {                      
+                    loginCheck = this.responseText;         
+                };
+                xhr.send();
+            
+            
+            setTimeout(function() {
+                    if(loginCheck >0){
+                        //user exists
+                        alert('That username is already in use');
+                    }else{
+                        //create this new user
+                            alert("http://aliriomendes.com/workshop/api.php?mode=createuser&user="+username+"&pass="+password);
+                        //create user then close this window
+                            xhr = Titanium.Network.createHTTPClient(); 
+                            xhr.open("GET", "http://aliriomendes.com/workshop/api.php?mode=createuser&user="+username+"&pass="+password);
+                            xhr.onload = function () {                      
+                                userID = this.responseText;         
+                            };
+                            xhr.send();
+                            
+                        setTimeout(function() {                         
+                            //success
+                                alert('account created!');
+                        }, 500);
+                        
+                    }
+                    
+            }, 1500);
+            
+        }else{          
+            alert('no user or pass');
+        }
+        /*var Window = require('ui/LoginView');
+        new Window().open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});*/
     });
-	centerViewsContainer.add(loginBtn);
+	centerViewsContainer.add(CreateBtn);
 	centerViewsContainer.add(passwordTF);
 	centerViewsContainer.add(usernameTF);
 	mainView.add(centerViewsContainer);
