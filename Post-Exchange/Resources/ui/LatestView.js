@@ -27,8 +27,32 @@ function LatestView() {
         image : styles.backBtnImage,
         top : 10,
         left : 10,
-        //width : 40,
+        width : styles.backBtnWidth,
     });
+    
+    actInd = Ti.UI.createActivityIndicator({
+            height:50, 
+            width:50, 
+            style:Titanium.UI.iPhone.ActivityIndicatorStyle.DARK,  
+            top:100,
+            
+    });
+    mainView.add(actInd);
+    actInd.show();
+    //The table view
+    LatestTable = Ti.UI.createTableView({
+        width:250,
+        left:30,
+        top: 70,
+        height:390,
+        backgroundColor:'transparent', 
+        color: '#83B93B',
+        separatorColor:'transparent',
+        style:Titanium.UI.iPhone.TableViewStyle.GROUPED,
+        editable:false
+    });
+    //load table row data
+    data = require('/ui/latestApi').loadLatest(LatestTable,actInd);
     
     
     backBtn.addEventListener("click", function(e){
@@ -36,7 +60,7 @@ function LatestView() {
         new newWindow().open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});
     });
     
-    
+    mainView.add(LatestTable);
     mainView.add(backBtn);
     mainView.add(titleLabel);
     mainWindow.add(mainView);

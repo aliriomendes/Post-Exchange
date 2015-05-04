@@ -63,7 +63,7 @@ function CreateAccountView() {
         image : styles.backBtnImage,
         top : 10,
         left : 10,
-        //width : 40,
+        width : styles.backBtnWidth,
     });
     backBtn.addEventListener("click", function(e){
         var Window = require('ui/LoginView');
@@ -92,8 +92,7 @@ function CreateAccountView() {
                         alert('That username is already in use');
                     }else{
                         //create this new user
-                            alert("http://aliriomendes.com/workshop/api.php?mode=createuser&user="+username+"&pass="+password);
-                        //create user then close this window
+                         //create user then close this window
                             xhr = Titanium.Network.createHTTPClient(); 
                             xhr.open("GET", "http://aliriomendes.com/workshop/api.php?mode=createuser&user="+username+"&pass="+password);
                             xhr.onload = function () {                      

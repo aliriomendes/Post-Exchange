@@ -12,6 +12,7 @@ var PlatformStyles = function() {
         cameraImage : '/images/cameraImage@2x.png',
         mainViewTop: 20,
         fontFamelyAlways : "Always In My Heart",
+        backBtnWidth : "40" ,
     };
 
     var ipadStyles = {
@@ -22,16 +23,18 @@ var PlatformStyles = function() {
         cameraImage : '/images/cameraImage@2x.png',
         mainViewTop: 20,
         fontFamelyAlways : "Always In My Heart" ,
+        backBtnWidth : "40" ,
     };
 
     var androidStyles = {
         backgroundImage : '/images/bg1_5.jpg',
         textFieldtbackgroundImage : '/images/textfieldBG.png',
-        backBtnImage : '/images/back.png',
+        backBtnImage : '/images/back@2x.png',
         textAreatbackgroundImage : '/images/textareaBG@2x.png',
         cameraImage : '/images/cameraImage@2x.png',
         mainViewTop: 0,
         fontFamelyAlways : "Always",
+        backBtnWidth : "40" ,     
     };
 
     function getPlatform() {

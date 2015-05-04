@@ -75,24 +75,29 @@ function LoginView() {
         backgroundColor : 'transparent',
     });
     loginBtn.addEventListener("click", function(e) {
+        usernameTF.value = "ali";
+        passwordTF.value = "12345";
         if (usernameTF.value !== '' && passwordTF.value !== '') {
 
             var username = usernameTF.value;
             var password = passwordTF.value;
-            var baseRequest = require('control/BaseRequest');
 
-            var requestString = "mode=checkuser&user=" + username + "&pass=" + password;
-            new baseRequest(requestString, function(response) {
-                console.log(e);
+            var xhr = Titanium.Network.createHTTPClient();
+            xhr.open("GET", "http://aliriomendes.com/workshop/api.php?mode=checkuser&user=" + username + "&pass=" + password);
+            xhr.onload = function() {
+                var response = this.responseText;
+
                 if (response != 0) {
+                    Ti.App.Properties.setString('userID', response);
                     var Window = require('ui/StartUpView');
                     new Window().open({
                         transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
                     });
-                }else{
-                   alert('check user and pass'); 
+                } else {
+                    alert('check user and pass');
                 }
-            });
+            };
+            xhr.send();
 
         } else {
             alert('no user or pass');

@@ -28,8 +28,7 @@ function HelpView() {
         image : styles.backBtnImage,
         top : 10,
         left : 10,
-        
-        //width : 40,
+        width : styles.backBtnWidth,
     });
     
     
